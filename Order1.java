@@ -5,7 +5,9 @@ import java.util.Set;
 
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.Select;
 import org.testng.annotations.Test;
 
 public class Order1 {
@@ -31,5 +33,8 @@ public class Order1 {
 	   	 driver.findElement(By.id(" address1")).sendKeys("abc(village),abc(post)");
 	   	 driver.findElement(By.xpath(" //input[@placeholder='Main St']")).sendKeys("abc(tq)");
 	   	 driver.findElement(By.xpath("//input[@id='inputCity']")).sendKeys("abc");
+	     WebElement state = driver.findElement(By.xpath("//select[@id='inputState']"));
+	     Select S1 = new Select(state);
+	     S1.selectByIndex(2);
 	}
 }

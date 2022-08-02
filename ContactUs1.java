@@ -1,5 +1,8 @@
 package mobileworld1;
 
+import java.util.Iterator;
+import java.util.Set;
+
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -15,6 +18,12 @@ public class ContactUs1 {
 	   	 driver.findElement(By.xpath("//a[@href='mobile.html']")).click();
 	     driver.findElement(By.id("navbarDropdown")).click();
 	     driver.findElement(By.xpath("//li[@class='nav-item dropdown show']//div//a[2]")).click();
+	     Set<String> windows = driver.getWindowHandles();
+	     Iterator<String> it = windows.iterator();
+	     String parentId = it.next();
+	     String childId = it.next();
+	     driver.switchTo().window(childId);
+	     driver.manage().window().maximize();
 	    
 	}
 }

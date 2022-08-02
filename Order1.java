@@ -47,11 +47,11 @@ public class Order1 {
 	     driver.findElement(By.id("gridCheck1")).click();
 	     driver.findElement(By.xpath("(//input[@id='gridCheck1'])[2]")).click();
 	     driver.findElement(By.xpath("//button[@class='btn btn-primary']")).click();
-	     WebElement T =   driver.findElement(By.xpath("//div[@class='modal-body']"));
-	     Thread.sleep(2000);
-	     String text = T.getText();
-	     System.out.println(text);
-	     Thread.sleep(2000);
+	    // WebElement T =   driver.findElement(By.xpath("//div[@class='modal-body']"));
+	     //Thread.sleep(2000);
+	   //  String text = T.getText();
+	    // System.out.println(text);
+	     //Thread.sleep(2000);
 	     driver.findElement(By.xpath("//a[@class='btn btn-secondary']")).click();
 	     driver.quit();
 	}

@@ -34,10 +34,21 @@ public class Signup1 {
    	 Thread.sleep(2000);
    	 driver.findElement(By.xpath("//button[@type='Submit']")).click();
    	 driver.switchTo().alert().accept();
-   	 driver.findElement(By.id("username")).sendKeys("abcd@gmail.com");
-   	 driver.findElement(By.name("password")).sendKeys("abcd@123");
-   	 driver.findElement(By.xpath("//a[@type='submit']")).click();
-   	 driver.quit(); 
+   	 driver.quit();
+	}
+   	 
+   	 @Test
+   	 public void signin() {
+   		System.setProperty("webdriver.chrome.driver", "./drivers/chromedriver.exe");
+      	 WebDriver driver = new ChromeDriver();
+      	 driver.get("https://mobileworld.azurewebsites.net/");
+      	 driver.manage().window().maximize();
+      	 driver.findElement(By.xpath("//button[@type='submit']")).click();
+   	     driver.findElement(By.id("username")).sendKeys("abcd@gmail.com");
+   	     driver.findElement(By.name("password")).sendKeys("abcd@123");
+   	     driver.findElement(By.xpath("//a[@type='submit']")).click();
+   	     driver.quit();
   }
+	
 
 }

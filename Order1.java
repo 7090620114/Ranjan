@@ -39,5 +39,10 @@ public class Order1 {
 	     driver.findElement(By.xpath("//input[@id='inputZip']")).sendKeys("573218");
 	     driver.findElement(By.xpath("//input[@rel='lenovo']")).click();
 	     driver.findElement(By.xpath("//input[@rel='samsung']")).click();
+	     driver.findElement(By.xpath("//option[text()='Lenovo-k13 ']")).click();
+	     driver.findElement(By.xpath("//input[@placeholder='no of mobiles']")).sendKeys("1");
+	     WebElement  count =driver.findElement(By.id("bought"));
+	     Select S2 =new Select(count);
+	     S2.selectByIndex(1);
 	}
 }

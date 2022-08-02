@@ -37,22 +37,31 @@ public class Order1 {
 	     Select S1 = new Select(state);
 	     S1.selectByIndex(2);
 	     driver.findElement(By.xpath("//input[@id='inputZip']")).sendKeys("573218");
-	     driver.findElement(By.xpath("//input[@rel='lenovo']")).click();
+	   //  driver.findElement(By.xpath("//input[@rel='lenovo']")).click();
 	     driver.findElement(By.xpath("//input[@rel='samsung']")).click();
-	     driver.findElement(By.xpath("//option[text()='Lenovo-k13 ']")).click();
-	     driver.findElement(By.xpath("//input[@placeholder='no of mobiles']")).sendKeys("1");
+	     driver.findElement(By.xpath("//input[@rel='samsung']")).click();
+	     driver.findElement(By.xpath("//option[.='Samsung S21 FE ']")).click();
+	     driver.switchTo().window(parentId);
+	     WebElement text1 = driver.findElement(By.xpath("//td[.='Samsung Galaxy S21']"));
+	    Thread.sleep(2000);
+	    System.out.println("Mobile Name"+" " +text1.getText());
+	    WebElement text2  = driver.findElement(By.xpath("(//td)[2]"));
+	    Thread.sleep(2000);
+	    System.out.println("Features of Mobile "+" " +text2.getText());
+	    driver.switchTo().window(childId);
+	   /*  driver.findElement(By.xpath("//input[@placeholder='no of mobiles']")).sendKeys("1");
 	     WebElement  count =driver.findElement(By.id("bought"));
 	     Select S2 =new Select(count);
 	     S2.selectByIndex(1);
 	     driver.findElement(By.id("gridCheck1")).click();
 	     driver.findElement(By.xpath("(//input[@id='gridCheck1'])[2]")).click();
 	     driver.findElement(By.xpath("//button[@class='btn btn-primary']")).click();
-	    // WebElement T =   driver.findElement(By.xpath("//div[@class='modal-body']"));
-	     //Thread.sleep(2000);
-	   //  String text = T.getText();
-	    // System.out.println(text);
-	     //Thread.sleep(2000);
+	     WebElement T =   driver.findElement(By.xpath("//div[@class='modal-body']"));
+	     Thread.sleep(2000);
+	     String text = T.getText();
+	     System.out.println(text);
+	     Thread.sleep(2000);
 	     driver.findElement(By.xpath("//a[@class='btn btn-secondary']")).click();
-	     driver.quit();
+	     driver.quit();*/
 	}
 }

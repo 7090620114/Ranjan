@@ -22,5 +22,8 @@ public class Order1 {
 	     String parentId = it.next();
 	     String childId = it.next();
 	     driver.switchTo().window(childId);
+	     driver.findElement(By.id("inputFirstName")).sendKeys("Ranjan");
+	   	 driver.findElement(By.xpath("(//input[@id='inputFirstName'])[2]")).sendKeys("C L");
+	   	 driver.findElement(By.id("inputEmail")).sendKeys("abcd@gmail.com");
 	}
 }

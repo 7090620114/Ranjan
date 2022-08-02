@@ -4,16 +4,16 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
-public class Signup1 extends Generalcode {
+public class Signup1  {
 	@Test
 	public void Signup()  throws InterruptedException {
-   	/* System.setProperty("webdriver.chrome.driver", "./drivers/chromedriver.exe");
+   	 System.setProperty("webdriver.chrome.driver", "./drivers/chromedriver.exe");
    	 WebDriver driver = new ChromeDriver();
    	 driver.get("https://mobileworld.azurewebsites.net/");
-   	 driver.manage().window().maximize();*/
-		Thread.sleep(2000);
+   	 driver.manage().window().maximize();
      WebElement wel =	 driver.findElement(By.xpath("//h1[text()='Welcome To Our Mobile World!']"));
      Thread.sleep(2000);
      String wel1 = wel.getText();
@@ -38,18 +38,27 @@ public class Signup1 extends Generalcode {
    	 driver.quit();
 	}
    	 
-   	 @Test
-   	 public void signin() {
-//   		System.setProperty("webdriver.chrome.driver", "./drivers/chromedriver.exe");
-//      	 WebDriver driver = new ChromeDriver();
-//      	 driver.get("https://mobileworld.azurewebsites.net/");
-//      	 driver.manage().window().maximize();
+   	 @Test(dataProvider="getSignindata")
+   	 public void signin(String email,String password) {
+  		System.setProperty("webdriver.chrome.driver", "./drivers/chromedriver.exe");
+     	 WebDriver driver = new ChromeDriver();
+     	 driver.get("https://mobileworld.azurewebsites.net/");
+     	 driver.manage().window().maximize();
       	 driver.findElement(By.xpath("//button[@type='submit']")).click();
-   	     driver.findElement(By.id("username")).sendKeys("abcd@gmail.com");
-   	     driver.findElement(By.name("password")).sendKeys("abcd@123");
+   	     driver.findElement(By.id("username")).sendKeys(email);
+   	     driver.findElement(By.name("password")).sendKeys(password);
    	     driver.findElement(By.xpath("//a[@type='submit']")).click();
    	     driver.quit();
   }
+   	 @DataProvider
+   	 public Object getSignindata() {
+   		return new Object [][] {
+   			{"abcd@gmail.com","abc@123"},
+			{"","abc@123"},
+			{"abcd@gmail.com",""},
+			{"",""}
+			};
+   	 }
 	
 
 }

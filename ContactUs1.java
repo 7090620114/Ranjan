@@ -29,6 +29,12 @@ public class ContactUs1 {
 	     Thread.sleep(2000);
 	     String text =T.getText();
 	     System.out.println(text+ " " +"Page is displayed");
+	     driver.findElement(By.name("name")).sendKeys("Ranjan");
+	     driver.findElement(By.name("email")).sendKeys("abcd@gmail.com");
+	     driver.findElement(By.name("phone")).sendKeys("abc@123");
+	     driver.findElement(By.name("message")).sendKeys("Hello world");
+	     driver.findElement(By.xpath("//input[@class='btn']")).click();
+	     driver.quit();
 	    
 	}
 }

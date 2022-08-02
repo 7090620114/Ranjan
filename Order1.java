@@ -36,5 +36,8 @@ public class Order1 {
 	     WebElement state = driver.findElement(By.xpath("//select[@id='inputState']"));
 	     Select S1 = new Select(state);
 	     S1.selectByIndex(2);
+	     driver.findElement(By.xpath("//input[@id='inputZip']")).sendKeys("573218");
+	     driver.findElement(By.xpath("//input[@rel='lenovo']")).click();
+	     driver.findElement(By.xpath("//input[@rel='samsung']")).click();
 	}
 }

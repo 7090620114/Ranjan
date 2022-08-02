@@ -6,13 +6,14 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.Test;
 
-public class Signup1 {
+public class Signup1 extends Generalcode {
 	@Test
-	public void Signup() throws InterruptedException {
-   	 System.setProperty("webdriver.chrome.driver", "./drivers/chromedriver.exe");
+	public void Signup()  throws InterruptedException {
+   	/* System.setProperty("webdriver.chrome.driver", "./drivers/chromedriver.exe");
    	 WebDriver driver = new ChromeDriver();
    	 driver.get("https://mobileworld.azurewebsites.net/");
-   	 driver.manage().window().maximize();
+   	 driver.manage().window().maximize();*/
+		Thread.sleep(2000);
      WebElement wel =	 driver.findElement(By.xpath("//h1[text()='Welcome To Our Mobile World!']"));
      Thread.sleep(2000);
      String wel1 = wel.getText();
@@ -39,10 +40,10 @@ public class Signup1 {
    	 
    	 @Test
    	 public void signin() {
-   		System.setProperty("webdriver.chrome.driver", "./drivers/chromedriver.exe");
-      	 WebDriver driver = new ChromeDriver();
-      	 driver.get("https://mobileworld.azurewebsites.net/");
-      	 driver.manage().window().maximize();
+//   		System.setProperty("webdriver.chrome.driver", "./drivers/chromedriver.exe");
+//      	 WebDriver driver = new ChromeDriver();
+//      	 driver.get("https://mobileworld.azurewebsites.net/");
+//      	 driver.manage().window().maximize();
       	 driver.findElement(By.xpath("//button[@type='submit']")).click();
    	     driver.findElement(By.id("username")).sendKeys("abcd@gmail.com");
    	     driver.findElement(By.name("password")).sendKeys("abcd@123");

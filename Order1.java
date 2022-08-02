@@ -44,5 +44,8 @@ public class Order1 {
 	     WebElement  count =driver.findElement(By.id("bought"));
 	     Select S2 =new Select(count);
 	     S2.selectByIndex(1);
+	     driver.findElement(By.id("gridCheck1")).click();
+	     driver.findElement(By.xpath("(//input[@id='gridCheck1'])[2]")).click();
+	     driver.findElement(By.xpath("//button[@class='btn btn-primary']")).click();
 	}
 }

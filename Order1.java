@@ -27,5 +27,7 @@ public class Order1 {
 	   	 driver.findElement(By.id("inputEmail")).sendKeys("abcd@gmail.com");
 	   	 driver.findElement(By.id("inputPassword")).sendKeys("abcd@123");
 	   	 driver.findElement(By.id("flexRadioDefault1")).click();
+	     driver.findElement(By.xpath("//input[@type='number']")).sendKeys("7090620114");
+	   	 driver.findElement(By.id(" address1")).sendKeys("abc(village),abc(post)");
 	}
 }

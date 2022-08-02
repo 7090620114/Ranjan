@@ -21,7 +21,7 @@ public class Signup1 {
    	 driver.findElement(By.xpath("//a[@href='signup.html']")).click();
      String reg= driver.findElement(By.xpath("//h1[.='Registration Form']")).getText();
 	 System.out.println(reg);
-   	 driver.findElement(By.xpath("//input[@placeholder='First Name']")).sendKeys("abcd");
+   	 driver.findElement(By.xpath("//input[@placeholder='First Name']")).sendKeys("Ranjan");
    	 driver.findElement(By.xpath("//input[@placeholder='Last Name']")).sendKeys("abcd");
    	 driver.findElement(By.xpath("//input[@type='Email']")).sendKeys("abcd@gmail.com");
    	 driver.findElement(By.xpath("//input[@type='Password']")).sendKeys("abcd@123");

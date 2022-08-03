@@ -43,13 +43,17 @@ public class Order1 {
 	     driver.findElement(By.xpath("//option[.='Samsung S21 FE ']")).click();
 	     driver.switchTo().window(parentId);
 	     WebElement text1 = driver.findElement(By.xpath("//td[.='Samsung Galaxy S21']"));
-	    Thread.sleep(2000);
-	    System.out.println("Mobile Name"+" " +text1.getText());
-	    WebElement text2  = driver.findElement(By.xpath("(//td)[2]"));
-	    Thread.sleep(2000);
-	    System.out.println("Features of Mobile "+" " +text2.getText());
-	    driver.switchTo().window(childId);
-	   /*  driver.findElement(By.xpath("//input[@placeholder='no of mobiles']")).sendKeys("1");
+	     Thread.sleep(2000);
+	     System.out.println("Mobile Name"+" " +text1.getText());
+	     WebElement text2 =driver.findElement(By.xpath("(//td)[2]"));
+	     Thread.sleep(2000);
+	     System.out.println("Features of Mobile "+" " +text2.getText());
+	     WebElement text3 =driver.findElement(By.xpath("(//td)[4]"));
+	     Thread.sleep(2000);
+	     System.out.println("Mobile price  :"+ text3.getText());
+	     driver.switchTo().window(childId);
+	     Thread.sleep(2000);
+	     driver.findElement(By.xpath("//input[@placeholder='no of mobiles']")).sendKeys("1");
 	     WebElement  count =driver.findElement(By.id("bought"));
 	     Select S2 =new Select(count);
 	     S2.selectByIndex(1);
@@ -62,6 +66,6 @@ public class Order1 {
 	     System.out.println(text);
 	     Thread.sleep(2000);
 	     driver.findElement(By.xpath("//a[@class='btn btn-secondary']")).click();
-	     driver.quit();*/
+	     driver.quit();
 	}
 }

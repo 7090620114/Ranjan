@@ -7,13 +7,12 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
-import org.openqa.selenium.remote.server.handler.CaptureScreenshot;
 import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 @Listeners(testcasefail.class)
-public class Order1 extends testcasefail {
+public class Order1  {
 	@Test
 	public void orders() throws InterruptedException {
 		System.setProperty("webdriver.chrome.driver", "./drivers/chromedriver.exe");
@@ -44,7 +43,7 @@ public class Order1 extends testcasefail {
 	     driver.findElement(By.xpath("//input[@rel='samsung']")).click();
 	     driver.findElement(By.xpath("//input[@rel='samsung']")).click();
 	     driver.findElement(By.xpath("//option[.='Samsung S21 FE ']")).click();
-	     Assert.assertEquals(driver.findElement(By.xpath("//option[.='Samsung S21 FE ']")).getText(),"Samsung S21 F");
+	     Assert.assertEquals(driver.findElement(By.xpath("//option[.='Samsung S21 FE ']")).getText(),"Samsung S21 FE");
 	     
 	     driver.switchTo().window(parentId);
 	     WebElement text1 = driver.findElement(By.xpath("//td[.='Samsung Galaxy S21']"));

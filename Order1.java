@@ -8,6 +8,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.Select;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 public class Order1 {
@@ -41,13 +42,14 @@ public class Order1 {
 	     driver.findElement(By.xpath("//input[@rel='samsung']")).click();
 	     driver.findElement(By.xpath("//input[@rel='samsung']")).click();
 	     driver.findElement(By.xpath("//option[.='Samsung S21 FE ']")).click();
+	     Assert.assertEquals(driver.findElement(By.xpath("//option[.='Samsung S21 FE ']")).getText(),"Samsung S21 F");
 	     driver.switchTo().window(parentId);
 	     WebElement text1 = driver.findElement(By.xpath("//td[.='Samsung Galaxy S21']"));
 	     Thread.sleep(2000);
-	     System.out.println("Mobile Name"+" " +text1.getText());
+	     System.out.println("Mobile Name :"+text1.getText());
 	     WebElement text2 =driver.findElement(By.xpath("(//td)[2]"));
 	     Thread.sleep(2000);
-	     System.out.println("Features of Mobile "+" " +text2.getText());
+	     System.out.println("Features of Mobile :"+text2.getText());
 	     WebElement text3 =driver.findElement(By.xpath("(//td)[4]"));
 	     Thread.sleep(2000);
 	     System.out.println("Mobile price  :"+ text3.getText());

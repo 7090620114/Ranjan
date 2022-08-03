@@ -45,7 +45,7 @@ public class Order1  {
 	     driver.findElement(By.xpath("//input[@rel='samsung']")).click();
 	     driver.findElement(By.xpath("//input[@rel='samsung']")).click();
 	     driver.findElement(By.xpath("//option[.='Samsung S21 FE ']")).click();
-	     Assert.assertEquals(driver.findElement(By.xpath("//option[.='Samsung S21 FE ']")).getText(),"Samsung S21 F");
+	     s.assertEquals(driver.findElement(By.xpath("//option[.='Samsung S21 FE ']")).getText(),"Samsung S21 F");
 	     
 	     driver.switchTo().window(parentId);
 	     WebElement text1 = driver.findElement(By.xpath("//td[.='Samsung Galaxy S21']"));

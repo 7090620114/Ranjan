@@ -1,9 +1,14 @@
 package mobileworld1;
 
+import java.io.File;
+import java.io.IOException;
 import java.util.Iterator;
 import java.util.Set;
 
+import org.apache.commons.io.FileUtils;
 import org.openqa.selenium.By;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
@@ -15,7 +20,7 @@ import org.testng.asserts.SoftAssert;
 @Listeners(testcasefail.class)
 public class Order1  {
 	@Test
-	public void orders() throws InterruptedException {
+	public void orders() throws InterruptedException, IOException {
 		SoftAssert s = new SoftAssert();
 		System.setProperty("webdriver.chrome.driver", "./drivers/chromedriver.exe");
 	   	 WebDriver driver = new ChromeDriver();
@@ -45,8 +50,13 @@ public class Order1  {
 	     driver.findElement(By.xpath("//input[@rel='samsung']")).click();
 	     driver.findElement(By.xpath("//input[@rel='samsung']")).click();
 	     driver.findElement(By.xpath("//option[.='Samsung S21 FE ']")).click();
-	     s.assertEquals(driver.findElement(By.xpath("//option[.='Samsung S21 FE ']")).getText(),"Samsung S21 F");
-	     
+	     s.assertEquals(driver.findElement(By.xpath("//option[.='Samsung S21 FE ']")).getText(),"Samsung S21 FE");
+	     Thread.sleep(2000);
+	     TakesScreenshot tss =  (TakesScreenshot)driver; 
+	   	 File src = tss.getScreenshotAs(OutputType.FILE);
+	   	 File dst = new File("C:\\Users\\ranjan.cl\\screenshot\\homepage.jpeg");
+	    	FileUtils.copyFile(src, dst);
+	   	
 	     driver.switchTo().window(parentId);
 	     WebElement text1 = driver.findElement(By.xpath("//td[.='Samsung Galaxy S21']"));
 	     Thread.sleep(2000);

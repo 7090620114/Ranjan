@@ -11,10 +11,12 @@ import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
+import org.testng.asserts.SoftAssert;
 @Listeners(testcasefail.class)
 public class Order1  {
 	@Test
 	public void orders() throws InterruptedException {
+		SoftAssert s = new SoftAssert();
 		System.setProperty("webdriver.chrome.driver", "./drivers/chromedriver.exe");
 	   	 WebDriver driver = new ChromeDriver();
 	   	 driver.get("https://mobileworld.azurewebsites.net/");
@@ -43,7 +45,7 @@ public class Order1  {
 	     driver.findElement(By.xpath("//input[@rel='samsung']")).click();
 	     driver.findElement(By.xpath("//input[@rel='samsung']")).click();
 	     driver.findElement(By.xpath("//option[.='Samsung S21 FE ']")).click();
-	     Assert.assertEquals(driver.findElement(By.xpath("//option[.='Samsung S21 FE ']")).getText(),"Samsung S21 FE");
+	     Assert.assertEquals(driver.findElement(By.xpath("//option[.='Samsung S21 FE ']")).getText(),"Samsung S21 F");
 	     
 	     driver.switchTo().window(parentId);
 	     WebElement text1 = driver.findElement(By.xpath("//td[.='Samsung Galaxy S21']"));
@@ -71,5 +73,6 @@ public class Order1  {
 	     Thread.sleep(2000);
 	     driver.findElement(By.xpath("//a[@class='btn btn-secondary']")).click();
 	     driver.quit();
+	     s.assertAll();
 	}
 }
